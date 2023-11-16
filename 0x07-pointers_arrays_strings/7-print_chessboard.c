@@ -1,18 +1,21 @@
-#include "main.h"
+#include <unistd.h>
+
 /**
- * print_chessboard - Entry point
- * @a: array
- * Return: Always 0 (Success)
+ * print_chessboard - prints the chessboard
+ * @a: the chessboard to be printed
+ *
+ * Return: void
  */
 void print_chessboard(char (*a)[8])
 {
-	int i;
-	int j;
+    int row, col;
 
-	for (i = 0; i < 8; i++)
-	{
-		for (j = 0; j < 8; j++)
-			_putchar(a[i][j]);
-		_putchar('\n');
-	}
+    for (row = 0; row < 8; row++)
+    {
+        for (col = 0; col < 8; col++)
+        {
+            write(1, &a[row][col], 1);
+        }
+        write(1, "\n", 1);
+    }
 }
