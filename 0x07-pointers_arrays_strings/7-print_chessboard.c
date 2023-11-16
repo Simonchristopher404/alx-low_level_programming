@@ -1,21 +1,21 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * print_chessboard - prints the chessboard
- * @a: the chessboard to be printed
+ * print_chessboard - prints chessboard.
  *
- * Return: void
+ * @a: rows.
+ * Return: nothing.
  */
 void print_chessboard(char (*a)[8])
 {
-    int row, col;
+	int i, j;
 
-    for (row = 0; row < 8; row++)
-    {
-        for (col = 0; col < 8; col++)
-        {
-            write(1, &a[row][col], 1);
-        }
-        write(1, "\n", 1);
-    }
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
+		{
+			_putchar(a[i][j]);
+		}
+		_putchar('\n');
+	}
 }
